@@ -1,8 +1,8 @@
 "use server"
 
-// import * as XLSX from "xlsx"
-// import fs from "fs/promises"
-// import path from "path"
+import * as XLSX from "xlsx"
+import fs from "fs/promises"
+import path from "path"
 
 interface FeedbackData {
   foodRating: number
