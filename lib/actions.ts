@@ -1,8 +1,8 @@
 "use server"
 
-import * as XLSX from "xlsx"
-import fs from "fs/promises"
-import path from "path"
+// import * as XLSX from "xlsx"
+// import fs from "fs/promises"
+// import path from "path"
 
 interface FeedbackData {
   foodRating: number
@@ -12,53 +12,31 @@ interface FeedbackData {
   suggestions: string
 }
 
-export async function submitFeedback(data: FeedbackData) {
+export async function submitFeedback(formData: {
+  foodRating: number
+  serviceRating: number
+  cleanlinessRating: number
+  mealType: string[]
+  suggestions: string
+}) {
+  const scriptURL = "https://script.google.com/macros/s/AKfycbxyz123456abcdef/exec" // replace with your URL
+
   try {
-    // Create a timestamp for the feedback
-    const timestamp = new Date().toISOString()
+    const response = await fetch(scriptURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
 
-    // Prepare the data for Excel
-    const feedbackRow = {
-      Timestamp: timestamp,
-      "Food Rating": data.foodRating,
-      "Service Rating": data.serviceRating,
-      "Cleanliness Rating": data.cleanlinessRating,
-      "Meal Types": Array.isArray(data.mealType) ? data.mealType.join(", ") : data.mealType,
-      Suggestions: data.suggestions,
+    if (!response.ok) {
+      throw new Error("Failed to submit feedback to Google Sheets")
     }
 
-    // Define the file path
-    const filePath = path.join(process.cwd(), "feedback_data.xlsx")
-
-    // Check if the file exists
-    let workbook
-    try {
-      const fileBuffer = await fs.readFile(filePath)
-      workbook = XLSX.read(fileBuffer)
-    } catch (error) {
-      // File doesn't exist, create a new workbook
-      workbook = XLSX.utils.book_new()
-      XLSX.utils.book_append_sheet(workbook, XLSX.utils.json_to_sheet([]), "Feedback")
-    }
-
-    // Get the worksheet
-    const worksheet = workbook.Sheets["Feedback"]
-
-    // Convert worksheet to JSON to append data
-    const jsonData = XLSX.utils.sheet_to_json(worksheet) || []
-    jsonData.push(feedbackRow)
-
-    // Convert back to worksheet
-    const newWorksheet = XLSX.utils.json_to_sheet(jsonData)
-    workbook.Sheets["Feedback"] = newWorksheet
-
-    // Write to file
-    const excelBuffer = XLSX.write(workbook, { bookType: "xlsx", type: "buffer" })
-    await fs.writeFile(filePath, excelBuffer)
-
-    return { success: true }
+    return await response.text()
   } catch (error) {
-    console.error("Error submitting feedback:", error)
-    throw new Error("Failed to submit feedback")
+    console.error("Submission error:", error)
+    throw error
   }
 }
