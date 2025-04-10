@@ -19,7 +19,7 @@ export async function submitFeedback(formData: {
   mealType: string[]
   suggestions: string
 }) {
-  const scriptURL = "https://script.google.com/macros/s/AKfycbxyz123456abcdef/exec" // replace with your URL
+  const scriptURL = "https://script.google.com/macros/s/AKfycbxxhXw4hf_MiuE2eiAmxBTIlZvalrAPUtP_z_CCWaoU-UvtpaaBc2t6jTTxSdJ4pLz_/exec" 
 
   try {
     const response = await fetch(scriptURL, {
