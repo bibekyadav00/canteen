@@ -11,7 +11,7 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       {/* Hero Section */}
       <section className="relative mb-12 overflow-hidden rounded-xl">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-800/80 to-amber-700/70 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-900/80 to-amber-800/70 z-10"></div>
         <Image
           src="/images/hero-image.jpeg"
           alt="HALL12Canteen.in"
