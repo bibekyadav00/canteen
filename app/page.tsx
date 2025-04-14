@@ -22,7 +22,7 @@ export default function Home() {
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-start p-8 md:p-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Open to all students of NIT</h1>
           <p className="text-xl text-white/90 mb-6 max-w-xl">
-            Currently serving with limited menu but soon full menu will be available.
+            Currently serving with limited menu, soon full menu will be available.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700">
@@ -42,14 +42,14 @@ export default function Home() {
 
       {/* Food Carousel */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-amber-900 mb-6">Current Menu</h2>
+        <h2 className="text-3xl font-bold text-amber-900 mb-6">MOST ORDERED</h2>
         <FoodCarousel />
       </section>
 
       {/* Special Offers */}
       <section className="mb-12">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-amber-900">Special Offers</h2>
+          <h2 className="text-3xl font-bold text-amber-900">Combo Offers</h2>
           <Link href="/offers" className="text-amber-700 hover:text-amber-800 flex items-center">
             View All <ChevronRight className="h-4 w-4 ml-1" />
           </Link>
