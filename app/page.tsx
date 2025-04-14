@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, MapPin } from "lucide-react"
 import FoodCarousel from "@/components/food-carousel"
 import SpecialOffers from "@/components/special-offers"
 
