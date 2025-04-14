@@ -20,9 +20,9 @@ export default function Home() {
           className="w-full h-[400px] object-cover"
         />
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-start p-8 md:p-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Welcome to HALL-12 Canteen</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Open to all students of NIT</h1>
           <p className="text-xl text-white/90 mb-6 max-w-xl">
-            Serving delicious meals to NIT students with love and care
+            Currently serving with limited menu but soon full menu will be available.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700">
@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* Food Carousel */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-amber-900 mb-6">Our Specialties</h2>
+        <h2 className="text-3xl font-bold text-amber-900 mb-6">Current Menu</h2>
         <FoodCarousel />
       </section>
 
