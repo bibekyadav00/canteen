@@ -61,9 +61,9 @@ export default function OffersPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl font-bold text-amber-900 mb-2">Special Offers</h1>
+        <h1 className="text-3xl font-bold text-amber-900 mb-2">Combo Offers</h1>
         <p className="text-amber-800 mb-8">
-          Take advantage of our special deals and discounts designed for NIT students
+          Take advantage of the discounts on combo meals .
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -87,11 +87,11 @@ export default function OffersPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="h-4 w-4 text-amber-600" />
-                  <span className="text-sm text-amber-700">Valid until: {offer.validUntil}</span>
+                  {/* <span className="text-sm text-amber-700">Valid until: {offer.validUntil}</span> */}
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">Claim Offer</Button>
+                {/* <Button className="w-full bg-amber-600 hover:bg-amber-700">Claim Offer</Button> */}
               </CardFooter>
             </Card>
           ))}
@@ -101,10 +101,8 @@ export default function OffersPage() {
           <h2 className="text-xl font-bold text-amber-900 mb-4">Terms & Conditions</h2>
           <ul className="list-disc list-inside space-y-2 text-amber-800">
             <li>All offers are valid for NIT students only</li>
-            <li>Student ID must be presented to avail student-specific offers</li>
-            <li>Offers cannot be combined with other promotions</li>
             <li>Management reserves the right to modify or withdraw any offer without prior notice</li>
-            <li>Special weekend offers are valid only on Saturdays and Sundays</li>
+            
           </ul>
         </div>
       </div>

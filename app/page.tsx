@@ -22,7 +22,7 @@ export default function Home() {
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-start p-8 md:p-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Open to all students of NIT</h1>
           <p className="text-xl text-white/90 mb-6 max-w-xl">
-            Currently serving with limited menu, soon full menu will be available.
+            Currently serving with limited menu, full menu will be available soon.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700">
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="mt-4 bg-amber-50 p-4 rounded-lg border border-amber-200 flex items-start gap-3">
           <MapPin className="h-5 w-5 text-amber-700 mt-0.5 flex-shrink-0" />
           <p className="text-amber-800">
-            <strong>HALL-12 Canteen</strong> is located inside Hall-12,Ground Floor . Open daily from 7:00 AM to 10:30 PM.
+            <strong>HALL-12 Canteen</strong> is located inside Hall-12,Ground Floor. Open daily from 7:00 AM to 10:30 PM.
           </p>
         </div>
       </section>
