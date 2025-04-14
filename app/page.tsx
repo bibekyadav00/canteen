@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative mb-12 overflow-hidden rounded-xl">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-900/80 to-amber-800/70 z-10"></div>
         <Image
-          src="/images/hero-image.jpg"
+          src="/images/hero-image.jpeg"
           alt="HALL12Canteen.in"
           width={1200}
           height={500}
@@ -75,7 +75,7 @@ export default function Home() {
           <TabsContent value="menu" className="bg-white p-6 rounded-b-lg border border-amber-200">
             <h3 className="text-xl font-bold text-amber-900 mb-4">Our Menu</h3>
             <p className="mb-4 text-amber-800">
-              Explore our diverse menu offering breakfast, lunch, dinner, and snacks at affordable prices.
+              Explore the diverse menu offering food at affordable prices.
             </p>
             <Button asChild className="bg-amber-600 hover:bg-amber-700">
               <Link href="/menu">View Full Menu</Link>
@@ -84,7 +84,7 @@ export default function Home() {
           <TabsContent value="offers" className="bg-white p-6 rounded-b-lg border border-amber-200">
             <h3 className="text-xl font-bold text-amber-900 mb-4">Current Offers</h3>
             <p className="mb-4 text-amber-800">
-              Check out our special discounts and combo offers available for students.
+              Check out the discounts on combo offers.
             </p>
             <Button asChild className="bg-amber-600 hover:bg-amber-700">
               <Link href="/offers">View All Offers</Link>
@@ -92,7 +92,7 @@ export default function Home() {
           </TabsContent>
           <TabsContent value="feedback" className="bg-white p-6 rounded-b-lg border border-amber-200">
             <h3 className="text-xl font-bold text-amber-900 mb-4">Your Opinion Matters</h3>
-            <p className="mb-4 text-amber-800">Help us improve by sharing your experience and suggestions.</p>
+            <p className="mb-4 text-amber-800">Feedback is taken seriously, take a moment to share your thoughts.</p>
             <Button asChild className="bg-amber-600 hover:bg-amber-700">
               <Link href="/feedback">Give Feedback</Link>
             </Button>

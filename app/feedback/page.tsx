@@ -77,7 +77,7 @@ export default function FeedbackPage() {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-amber-900 mb-2">Share Your Feedback</h1>
         <p className="text-amber-800 mb-6">
-          Feedback is taken seriously, take a moment to share your thoughts .
+          Feedback is taken seriously, take a moment to share your thoughts.
         </p>
 
         <Card className="bg-white border-amber-200">
