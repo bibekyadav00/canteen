@@ -48,7 +48,7 @@ export default function MenuPage() {
       { name: "Mutton Keema", price: "180" },
       { name: "Mutton Kaleeji", price: "120" },
       { name: "Mutton Biryani (Sunday)", price: "130" },
-    ]
+    ],
     starters: [
       { name: "Paneer Tikka (6pc)", price: "80" },
       { name: "Chilly Paneer (6pc)", price: "80" },
