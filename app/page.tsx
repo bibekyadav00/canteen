@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       {/* Quick Links */}
-      <section>
+      {/* <section>
         <h2 className="text-3xl font-bold text-amber-900 mb-6">Quick Links</h2>
         <Tabs defaultValue="menu" className="w-full">
           <TabsList className="grid w-full grid-cols-3 bg-amber-100">
@@ -98,6 +98,32 @@ export default function Home() {
             </Button>
           </TabsContent>
         </Tabs>
+      </section> */}
+       {/* Google Maps Section */}
+      <section className="mb-12">
+        <div className="flex items-center gap-2 mb-6">
+          <MapPin className="h-6 w-6 text-amber-700" />
+          <h2 className="text-3xl font-bold text-amber-900">Location</h2>
+        </div>
+        <div className="rounded-xl overflow-hidden border border-amber-200 shadow-md">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d918.4639673423036!2d87.28879729999999!3d23.5461264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f773002c336315%3A0xff96523f47bbe966!2sHall-12%20(%20Dr.%20APJ%20Abdul%20Kalam%20International%20Hostel)!5e0!3m2!1sen!2sin!4v1713118164!5m2!1sen!2sin"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="HALL-12 Location"
+            className="w-full"
+          ></iframe>
+        </div>
+        <div className="mt-4 bg-amber-50 p-4 rounded-lg border border-amber-200 flex items-start gap-3">
+          <MapPin className="h-5 w-5 text-amber-700 mt-0.5 flex-shrink-0" />
+          <p className="text-amber-800">
+            <strong>HALL-12 Canteen</strong> is located inside Hall-12,Ground Floor . Open daily from 7:00 AM to 10:30 PM.
+          </p>
+        </div>
       </section>
     </div>
   )
