@@ -14,7 +14,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-900/80 to-amber-800/70 z-10"></div>
         <Image
           src="/images/hero-image.jpg"
-          alt="HALL-12 Canteen"
+          alt="HALL12Canteen.in"
           width={1200}
           height={500}
           className="w-full h-[400px] object-cover"
