@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* Food Carousel */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-amber-900 mb-6">MOST ORDERED</h2>
+        <h2 className="text-3xl font-bold text-amber-900 mb-6">Most Ordered</h2>
         <FoodCarousel />
       </section>
 
