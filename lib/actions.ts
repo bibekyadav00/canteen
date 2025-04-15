@@ -10,9 +10,9 @@ export interface FeedbackData {
 }
 
 export async function submitFeedback(formData: FeedbackData) {
-  // Replace the URL below with your deployed Google Apps Script web app URL.
+  // Updated URL with your provided script id.
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbyour-script-id/exec";
+    "https://script.google.com/macros/s/AKfycb1vUX6q9M9yoESlrN9d7PqFo24BHiD7EcEzvtqoswq08F_YRQLZT4En_ZQ/exec";
   
   // Prepare the payload. Convert the mealType array to a comma-separated string.
   const formDataForSheet = {
@@ -21,10 +21,10 @@ export async function submitFeedback(formData: FeedbackData) {
   };
 
   try {
-    // Send a POST request to your Apps Script web app.
+    // Send a POST request to the Google Apps Script web app.
     await fetch(scriptURL, {
       method: "POST",
-      mode: "no-cors", // Using no-cors; this means you won't get a readable response.
+      mode: "no-cors", // Use no-cors to bypass CORS since we don't need to read the response.
       headers: {
         "Content-Type": "application/json"
       },
