@@ -7,7 +7,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"] })
-
+// hh
 export const metadata: Metadata = {
   title: "HALL12Canteen.in",
   description: "Food service for NIT students",
