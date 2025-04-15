@@ -44,15 +44,15 @@ export default function FeedbackPage() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
     try {
-      await submitFeedback(formData);
+      await submitFeedback(formData)
       toast({
         title: "Feedback Submitted",
         description: "Thank you for your valuable feedback!",
-      });
+      })
       // Reset form
       setFormData({
         foodRating: 0,
@@ -60,17 +60,17 @@ export default function FeedbackPage() {
         cleanlinessRating: 0,
         mealType: [],
         suggestions: "",
-      });
+      })
     } catch (error) {
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your feedback. Please try again.",
         variant: "destructive",
-      });
+      })
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -179,11 +179,7 @@ export default function FeedbackPage() {
                 />
               </div>
 
-              <Button
-                type="submit"
-                className="w-full bg-amber-600 hover:bg-amber-700"
-                disabled={isSubmitting}
-              >
+              <Button type="submit" className="w-full bg-amber-600 hover:bg-amber-700" disabled={isSubmitting}>
                 {isSubmitting ? "Submitting..." : "Submit Feedback"}
               </Button>
             </form>
