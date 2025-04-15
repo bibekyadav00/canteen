@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">HALL-12 Canteen</h3>
-            <p className="mb-4">Affordable,Hygienic & Delicious food served</p>
+            <p className="mb-4">Good Food, Great Price, Clean Plate.</p>
             <div className="flex space-x-4">
               <Link href="#" className="hover:text-white">
                 <Facebook className="h-5 w-5" />
@@ -52,10 +52,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+            <h3 className="text-xl font-bold mb-4">CAbout</h3>
             <address className="not-italic">
-              <p>HALL-12 Canteen</p>
-              <p>NIT Campus(infront of HALL-3)</p>
+              {/* <p>HALL-12 Canteen</p> */}
+              {/* <p>NIT Campus(infront of HALL-3)</p> */}
               <p>Email: bibekyadav00@gmail.com</p>
               <p className="mt-2">Managed by: Bibek Yadav</p>
               <p className="mt-2">Caterer: DELICIOUS KITCHEN</p>
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-amber-800 mt-8 pt-6 text-center">
-          <p>&copy; {new Date().getFullYear()} hall12canteen.in. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} hall12canteen.in All rights reserved.</p>
         </div>
       </div>
     </footer>

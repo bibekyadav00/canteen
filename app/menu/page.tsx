@@ -266,8 +266,7 @@ export default function MenuPage() {
           <ul className="list-disc list-inside space-y-2 text-amber-800">
             <li>Prices are subject to change without prior notice</li>
             <li>Mutton items are available only on Sundays</li>
-            <li>Special discounts available for bulk orders</li>
-            <li>For any special dietary requirements, please speak to the staff</li>
+            <li>For any specific requirement, please speak to the staff</li>
           </ul>
         </div>
       </div>
