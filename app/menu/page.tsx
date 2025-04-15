@@ -210,8 +210,8 @@ export default function MenuPage() {
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-5xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-amber-900 mb-2">Our Menu</h1>
-          <p className="text-amber-800">Explore our wide range of delicious food options at affordable prices</p>
+          {/* <h1 className="text-3xl font-bold text-amber-900 mb-2">Our Menu</h1> */}
+          {/* <p className="text-amber-800">Explore our wide range of delicious food options at affordable prices</p> */}
         </div>
 
         <div className="relative mb-6">
@@ -227,7 +227,7 @@ export default function MenuPage() {
 
         <Card className="bg-white border-amber-200 overflow-hidden">
           <CardHeader className="bg-amber-50 border-b border-amber-200">
-            <CardTitle className="text-amber-900">HALL-12 Canteen Menu</CardTitle>
+            <CardTitle className="text-amber-900">Full Menu</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             <Tabs defaultValue="breakfast" className="w-full">
