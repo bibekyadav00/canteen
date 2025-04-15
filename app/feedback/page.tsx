@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,14 +10,15 @@ import { StarRating } from "@/components/star-rating"
 import { Checkbox } from "@/components/ui/checkbox"
 import { toast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
-import { submitFeedback } from "@/lib/actions"
+// Import the server action that writes to the Excel file
+import { submitFeedback } from "@/lib/action"
 
 export default function FeedbackPage() {
   const [formData, setFormData] = useState({
     foodRating: 0,
     serviceRating: 0,
     cleanlinessRating: 0,
-    mealType: [],
+    mealType: [] as string[],
     suggestions: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -34,7 +34,7 @@ export default function FeedbackPage() {
 
   const handleCheckboxChange = (value: string) => {
     setFormData((prev) => {
-      const currentMealTypes = [...(prev.mealType as string[])]
+      const currentMealTypes = [...prev.mealType]
       if (currentMealTypes.includes(value)) {
         return { ...prev, mealType: currentMealTypes.filter((type) => type !== value) }
       } else {
@@ -44,33 +44,35 @@ export default function FeedbackPage() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
     try {
-      await submitFeedback(formData);
+      // Call the server action which writes the feedback to an Excel sheet
+      await submitFeedback(formData)
       toast({
         title: "Feedback Submitted",
         description: "Thank you for your valuable feedback!",
-      });
-      // Reset form
+      })
+      // Reset form data
       setFormData({
         foodRating: 0,
         serviceRating: 0,
         cleanlinessRating: 0,
         mealType: [],
         suggestions: "",
-      });
+      })
     } catch (error) {
+      console.error("Submission error:", error)
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your feedback. Please try again.",
         variant: "destructive",
-      });
+      })
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -124,7 +126,7 @@ export default function FeedbackPage() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="breakfast"
-                        checked={(formData.mealType as string[]).includes("breakfast")}
+                        checked={formData.mealType.includes("breakfast")}
                         onCheckedChange={() => handleCheckboxChange("breakfast")}
                       />
                       <Label htmlFor="breakfast" className="text-amber-800">
@@ -134,7 +136,7 @@ export default function FeedbackPage() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="lunch"
-                        checked={(formData.mealType as string[]).includes("lunch")}
+                        checked={formData.mealType.includes("lunch")}
                         onCheckedChange={() => handleCheckboxChange("lunch")}
                       />
                       <Label htmlFor="lunch" className="text-amber-800">
@@ -144,7 +146,7 @@ export default function FeedbackPage() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="dinner"
-                        checked={(formData.mealType as string[]).includes("dinner")}
+                        checked={formData.mealType.includes("dinner")}
                         onCheckedChange={() => handleCheckboxChange("dinner")}
                       />
                       <Label htmlFor="dinner" className="text-amber-800">
@@ -154,7 +156,7 @@ export default function FeedbackPage() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="snacks"
-                        checked={(formData.mealType as string[]).includes("snacks")}
+                        checked={formData.mealType.includes("snacks")}
                         onCheckedChange={() => handleCheckboxChange("snacks")}
                       />
                       <Label htmlFor="snacks" className="text-amber-800">
@@ -178,7 +180,7 @@ export default function FeedbackPage() {
                   className="min-h-[100px] border-amber-200 focus-visible:ring-amber-500"
                 />
               </div>
-
+{/* hhh */}
               <Button
                 type="submit"
                 className="w-full bg-amber-600 hover:bg-amber-700"
